@@ -86,9 +86,9 @@ public void testAdd()
 System.out.println("add");
 String item = "Satya";
 TodoList instance = new TodoList();
-instance . add(item);
+instance.add(item);
 int i = instance.size();
-assertTrue(i ==0);
+assertTrue(i>0);
 System.out.println("Entry is added to the list");
 
 
@@ -97,29 +97,45 @@ System.out.println("Entry is added to the list");
 @Test
 public void testEditAt() 
 {
-System.out.println("moveDown");
-TodoList instance = new TodoList();
+System.out.println("EditAt");
 String item = "Satya";
+TodoList instance = new TodoList();
 instance . add(item);
-item = "Manasa";
-instance.add(item);
-item = "Venky";
-instance.add(item);
-instance.moveUp(1)
-int actual = instance.size();
-assertEquals
+System.out.println("item");
+int i = instance.size();
+assertTrue(i>0);
+System.out.println("Entry is edited");
 }
 
 @Test
 public void testRemoveAt() 
 {
-fail("Not yet implemented");
+System.out.println("removeAt");
+TodoList instance= new TodoList();
+String item = "Manasa";
+instance.add(item);
+instance.removeAt(0);
+int i = instance.size();
+assertTrue(i==0);
+System.out.println("Entry is removed from the list");
+
 }
 
 @Test
 public void testSize() 
 {
-fail("Not yet implemented");
+System.out.println("size");
+TodoList instance= new TodoList();
+String item = "Manasa";
+instance.add(item);
+item="satya";
+instance.add(item);
+item = "Venky";
+instance.add(item);
+int expResult=3;
+int actual= instance.size();
+assertEquals(expResult,actual);
+System.out.println("Size of the array is "+actual);
 }
     
 }
